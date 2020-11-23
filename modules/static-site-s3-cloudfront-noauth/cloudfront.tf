@@ -18,7 +18,7 @@ resource "aws_cloudfront_distribution" "cdn_distribution" {
     compress               = true
     allowed_methods        = ["GET", "HEAD"]
     cached_methods         = ["GET", "HEAD"]
-    target_origin_id       = "${var.site_project_name}"
+    target_origin_id       = var.site_project_name
     min_ttl                = 0
     default_ttl            = 86400
     max_ttl                = 31536000
