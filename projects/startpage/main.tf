@@ -1,4 +1,10 @@
-
+terraform {
+  backend "s3" {
+    bucket = "misc-justin-davis"
+    key    = "startpage-tfstate"
+    region = "us-east-1"
+  }
+}
 
 module "start_page" {
     source = "../../modules/static-site-s3-cloudfront-noauth"
