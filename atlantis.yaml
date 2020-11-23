@@ -1,5 +1,5 @@
 version: 3
 projects:
-- dir: startpage
+- dir: projects/startpage
   autoplan:
     when_modified: ["../modules/**/*.tf", "*.tf*"]
