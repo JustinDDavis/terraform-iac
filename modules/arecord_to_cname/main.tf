@@ -7,4 +7,5 @@ resource "aws_route53_record" "www" {
     name    = var.desired_name
     type    = "CNAME"
     records        = [var.cloudfront_address]
+    ttl     = "5"
 }
