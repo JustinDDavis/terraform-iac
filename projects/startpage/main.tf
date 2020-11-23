@@ -8,3 +8,11 @@ module "start_page" {
     price_class = "PriceClass_100"
     oai_identity_comment = "static-site-s3-cloudfront-noauth"
 }
+
+module "set_dns_to_cname" {
+    source = "../../modules/arecord_to_cname"
+
+    cloudfront_address = module.start_page.a_record
+    hosted_zone = "justinddavis.com."
+    desired_name = "startpage"
+}
