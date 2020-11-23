@@ -5,4 +5,6 @@ module "start_page" {
 
     aws_region = "us-east-1"
     site_project_name = "testproject"
+    price_class = "PriceClass_100"
+    oai_identity_comment = "static-site-s3-cloudfront-noauth"
 }
