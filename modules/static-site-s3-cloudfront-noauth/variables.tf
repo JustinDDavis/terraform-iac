@@ -13,3 +13,7 @@ variable "price_class" {
 variable "oai_identity_comment" {
   description = "A comment given to an OAI identity. Provides information to the console"
 }
+
+variable "acm_arn" {
+  description = "Certificate ARN for CNAME domain"
+}

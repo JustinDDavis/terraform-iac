@@ -6,6 +6,11 @@ terraform {
   }
 }
 
+data "aws_acm_certificate" "cert" {
+  domain   = "justinddavis.com"
+  statuses = ["ISSUED"]
+}
+
 module "start_page" {
     source = "../../modules/static-site-s3-cloudfront-noauth"
 
@@ -13,6 +18,8 @@ module "start_page" {
     site_project_name = "startpage.justinddavis.com"
     price_class = "PriceClass_100"
     oai_identity_comment = "static-site-s3-cloudfront-noauth"
+
+    acm_arn = data.aws_acm_certificate.cert.arn
 }
 
 module "set_dns_to_cname" {
